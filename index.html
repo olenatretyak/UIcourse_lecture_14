@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gitHubApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+
+    <!-- App -->
+    <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="service.js"></script>
+</head>
+<body>
+    <div ng-controller="GithubUserController">
+
+        <input type="text" name="user_name" ng-model="userName">
+        <button ng-click="search()">Search</button>
+
+        <div ng-repeat="user in users" class="user-form" style="width: 400px; height: 150px; border: 1px solid #000; margin-top: 30px;">
+            <img ng-src={{user.avatar_url}} height="150px" style="float: left;">
+                <div style="display: inline-block; margin-top: 30px; margin-left: 20px;">
+                    <div>
+                        Name: {{user.name}}
+                    </div>
+                    <div>
+                        Login: {{user.login}}
+                    </div>
+                    <div>
+                        Location: {{user.location}}
+                    </div>
+                    <div>
+                        Company: {{user.company}}
+                    </div>
+                    <div>
+                        Email: {{user.email}}
+                    </div>
+                </div>
+
+        </div>
+</body>
+</html>
